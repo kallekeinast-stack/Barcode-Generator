@@ -1,16 +1,24 @@
 from pathlib import Path
 
+from config import settings
+
 
 def main():
+
     print("=" * 40)
     print("Barcode Generator")
-    print("Version 0.1")
     print("=" * 40)
 
-    Path("output").mkdir(exist_ok=True)
-    Path("input").mkdir(exist_ok=True)
+    print(f"Aasta      : {settings.YEAR}")
+    print(f"Algus      : {settings.START}")
+    print(f"Lõpp       : {settings.END}")
 
-    print("Projekt on valmis.")
+    print(f"Laius      : {settings.WIDTH_MM} mm")
+    print(f"Kõrgus     : {settings.HEIGHT_MM} mm")
+
+    Path(settings.OUTPUT_FOLDER).mkdir(exist_ok=True)
+
+    print("\nValmis.")
 
 
 if __name__ == "__main__":
